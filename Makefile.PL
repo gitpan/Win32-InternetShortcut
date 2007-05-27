@@ -1,3 +1,4 @@
+use strict;
 use ExtUtils::MakeMaker;
 
 WriteMakefile(
@@ -6,12 +7,16 @@ WriteMakefile(
     PREREQ_PM         => {},
     ($] >= 5.005 ?
       (ABSTRACT_FROM  => 'lib/Win32/InternetShortcut.pm',
-       AUTHOR         => 'Kenichi Ishigaki <ishigaki@cpan.org>') : ()),
+       AUTHOR         => 'Kenichi Ishigaki <ishigaki@cpan.org>') : ()
+    ),
     LIBS              => [],
     DEFINE            => '',
     INC               => '-I.',
     # OBJECT            => '$(O_FILES)', # link all the C files too
     XS                => { 'InternetShortcut.xs' => 'InternetShortcut.cpp' },
+    ($ExtUtils::MakeMaker::VERSION >= 6.31 ?
+      (LICENSE => 'perl') : ()
+    ),
 );
 
 sub MY::xs_c {
