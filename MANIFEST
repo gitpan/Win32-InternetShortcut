@@ -1,12 +1,13 @@
 Changes
+InternetShortcut.h
 InternetShortcut.xs
+lib/Win32/InternetShortcut.pm
 Makefile.PL
-MANIFEST
+MANIFEST			This list of files
+META.yml
 README
-typemap
 t/00_load.t
 t/01_basic.t
 t/99_pod.t
 t/99_podcoverage.t
-lib/Win32/InternetShortcut.pm
-META.yml                                 Module meta-data (added by MakeMaker)
+typemap

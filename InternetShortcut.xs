@@ -2,7 +2,7 @@
 
   Win32::InternetShortcut
 
-  ver 0.01
+  ver 0.03
 
   Copyright (C) 2006 by Kenichi Ishigaki <ishigaki@cpan.org>
 
@@ -34,56 +34,7 @@
 #include "EXTERN.h"
 #include "perl.h"
 #include "XSUB.h"
-
-/* XXX: enough definitions; should prepare a header file :( */
-
-#define HK_PATH          "path"
-#define HK_FULLPATH      "fullpath"
-
-#define HK_PROP          "properties"
-#define HK_SITE_PROP     "site_properties"
-
-#define HK_URL           "url"
-#define HK_NAME          "name"
-#define HK_WORKDIR       "workdir"
-#define HK_HOTKEY        "hotkey"
-#define HK_SHOWCMD       "showcmd"
-#define HK_ICONINDEX     "iconindex"
-#define HK_ICONFILE      "iconfile"
-#define HK_WHATSNEW      "whatsnew"
-#define HK_AUTHOR        "author"
-#define HK_DESC          "description"
-#define HK_COMMENT       "comment"
-
-#define HK_LASTVISITS    "lastvisits"
-#define HK_LASTMOD       "lastmod"
-#define HK_FLAGS         "flags"
-#define HK_VISITCOUNT    "visitcount"
-#define HK_TITLE         "title"
-#define HK_CODEPAGE      "codepage"
-
-#define HK_MODIFIED      "modified"
-
-#define IK_URL           "URL"
-#define IK_MODIFIED      "Modified"
-#define IK_ICONINDEX     "IconIndex"
-#define IK_ICONFILE      "IconFile"
-
-#define hash_store(hash, key, value) \
-  hv_store(hash, key, strlen(key), value, 0)
-
-#define _STGM_SHARE_READ (STGM_READ | STGM_SHARE_DENY_WRITE)
-
-/* should use CTime or something like that? */
-#define _stringify_systime(buf, systime) \
-  sprintf(buf, "%04d-%02d-%02d %02d:%02d:%02d", \
-    systime.wYear,     \
-    systime.wMonth,    \
-    systime.wDay,      \
-    systime.wHour,     \
-    systime.wMinute,   \
-    systime.wSecond    \
-  )
+#include "InternetShortcut.h"
 
 HRESULT _initialize(
   IUniformResourceLocator ** pURL,
