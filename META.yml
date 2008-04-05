@@ -1,11 +1,11 @@
 --- #YAML:1.0
 name:                Win32-InternetShortcut
-version:             0.03
+version:             0.04
 abstract:            handles Internet Shortcut (IE's Favorite)
 license:             perl
 author:              
     - Kenichi Ishigaki <ishigaki@cpan.org>
-generated_by:        ExtUtils::MakeMaker version 6.42
+generated_by:        ExtUtils::MakeMaker version 6.44
 distribution_type:   module
 requires:     
     Test::More:                    0.47

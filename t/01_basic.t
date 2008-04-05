@@ -24,7 +24,13 @@ my @tests = (
     ok($self->{url} eq $url);
   },
   sub {
-    ok($self->{modified});
+    SKIP: {
+      skip 'This test seems unreliable: '.
+           'set $ENV{TEST_MODIFIED} to test', 1
+        unless $ENV{TEST_MODIFIED};
+
+      ok($self->{modified});
+    }
   },
   sub {
     $self->load_properties($path);

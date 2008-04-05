@@ -2,7 +2,7 @@
 
   Win32::InternetShortcut
 
-  ver 0.03
+  ver 0.04
 
   Copyright (C) 2006 by Kenichi Ishigaki <ishigaki@cpan.org>
 
